@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Personal Website</title>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --accent: #6366f1;
+      --border: #e2e8f0;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f1f5f9;
+      --muted: #cbd5e1;
+      --accent: #a5b4fc;
+      --border: #334155;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    #themeToggle {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 9px 13px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 65px 8%;
+      scroll-margin-top: 80px;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 6vw, 58px);
+      line-height: 1.2;
+      margin: 12px 0;
+    }
+
+    .hero h1 span,
+    .section-title {
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 11px 20px;
+      border-radius: 8px;
+      margin: 5px 8px 5px 0;
+    }
+
+    .button:hover {
+      opacity: 0.85;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 14px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 8px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 5%;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      section {
+        padding: 45px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="logo">MyPortfolio.</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" onclick="toggleTheme()"
+        aria-label="Toggle dark and light theme">🌙 Dark</button>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section class="hero" id="home">
+    <p>Hello, welcome to my portfolio!</p>
+
+    <h1>Hi, I'm <span>Rashmi</span></h1>
+
+    <h2></h2>
+
+    <p>
+      I am passionate about technology, programming, and building
+      creative solutions. Welcome to my personal portfolio where you
+      can explore my skills, education, and projects.
+    </p>
+
+    <div>
+      <a class="button" href="#projects">View My Projects</a>
+      <a class="button" href="#contact">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+      <p>
+        I am a motivated student and aspiring professional interested
+        in software development and modern technologies. I enjoy
+        learning new skills, solving problems, and creating useful
+        applications.
+      </p>
+      <p>
+        My goal is to keep improving my technical knowledge and
+        contribute to meaningful projects.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Course:BCA</h3>
+        <p>College:Swamy vivekanada Rural First Grade College</p>
+        <p>Year: 2024 – 2027</p>
+      </div>
+
+      
+
+      <div class="card">
+        <h3>Certifications</h3>
+        <p>upthaught:soft skill and advance excel</p>
+        <p>tata(forage):genAI data analytics job stimulations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills">
+      <span class="skill">HTML5</span>
+      <span class="skill">CSS3</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Python</span>
+      <span class="skill">Java</span>
+      <span class="skill">C / C++</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Git & GitHub</span>
+      <span class="skill">Problem Solving</span>
+      <span class="skill">Communication</span>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Personal Portfolio Website</h3>
+        <p>
+          A responsive website built using HTML, CSS, and JavaScript
+          to showcase my skills, education, and achievements.
+        </p>
+        <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+        <a href="https://github.com/" target="_blank"
+          rel="noopener noreferrer">GitHub →</a>
+      </div>
+
+      <div class="card">
+        <h3>GenAI data analytics job stimulation</h3>
+        <p>
+          about*exploratory data analysus and risk profiling,*preicting delinquency with AI.,*
+          *usiness report and collection strategy,*implement ai driven collections strategy
+        </p>
+        <p><strong>Technologies:</strong>......</p>
+        <a href="https://github.com/" target="_blank"
+          rel="noopener noreferrer">GitHub →</a>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-card">
+
+
+      <p style="margin-top: 15px;">
+        <strong>Email:</strong>
+        <a href="mailto:rashmirashu2304@gmail.com?subject=Portfolio%20Enquiry">
+          rashmirashu2304@gmail.com
+        </a>
+      </p>
+
+      .
+
+      <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/" target="_blank"
+          rel="noopener noreferrer"></a>
+      </p>
+
+      <a class="button"
+        href="mailto:yourname@example.com?subject=Portfolio%20Enquiry">
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Rashmi. All rights reserved.</p>
+    <p>Built with HTML, CSS & JavaScript.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleTheme() {
+      const isDark = document.body.classList.toggle("dark");
+      const button = document.getElementById("themeToggle");
+
+      button.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+      localStorage.setItem("portfolioTheme", isDark ? "dark" : "light");
+    }
+
+    // Restore the previously selected theme
+    const savedTheme = localStorage.getItem("portfolioTheme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      document.getElementById("themeToggle").textContent = "☀️ Light";
+    }
+
+    // Automatically update the copyright year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
